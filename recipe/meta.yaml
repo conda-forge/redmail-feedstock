@@ -1,5 +1,5 @@
 {% set name = "redmail" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/redmail-{{ version }}.tar.gz
-  sha256: 821266e2d20c2a485343e8a05de5c76a96761dae58d41cc7c81b4d919c07f703
+  sha256: 29f362a89ff03a561c2f7fccfc9cf583c0b8d53f2cb126b2a7d42092e72dc070
 
 build:
   number: 0
@@ -18,7 +18,8 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - versioneer
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
     - jinja2
     - python >=3.6
