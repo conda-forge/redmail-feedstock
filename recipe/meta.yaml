@@ -18,7 +18,8 @@ requirements:
   host:
     - pip
     - python >=3.6
-    - versioneer
+    - setuptools >=45
+    - setuptools_scm >=6.2
   run:
     - jinja2
     - python >=3.6
