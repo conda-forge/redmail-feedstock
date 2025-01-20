@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/redmail-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/redmail-{{ version }}.tar.gz
   sha256: 0447cbd76deb2788b2d831c12e22b513587e99f725071d9951a01b0f2b8d0a72
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools_scm >=6.2
   run:
     - jinja2
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -37,6 +37,7 @@ test:
   requires:
     - pip
     - pytest
+    - python {{ python_min }}
 
 about:
   home: https://github.com/Miksus/red-mail
